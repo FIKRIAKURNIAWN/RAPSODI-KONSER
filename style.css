@@ -1,0 +1,294 @@
+/* Modern CSS Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff4081;
+    --primary-hover: #e91e63;
+    --secondary-color: #03a9f4;
+    --dark-bg: rgba(0, 0, 0, 0.7);
+    --light-text: #ffffff;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+html, body {
+    height: 100%;
+    overflow: auto;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+body {
+    color: var(--light-text);
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Content Container */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--dark-bg);
+    backdrop-filter: blur(8px);
+    margin: 100px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* animasi */
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography */
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #ff4081, #03a9f4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.5px;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.2);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styles */
+button {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--primary-hover), #0288d1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 50px auto;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Dropdown styling */
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    transition: var(--transition);
+    appearance: none; /* hilangkan style default */
+    cursor: pointer;
+}
+
+/* Biar ada tanda panah custom */
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.2);
+}
+
+/* Warna dropdown (isi option) */
+option {
+    background: #222; /* latar gelap */
+    color: white;     /* teks putih */
+    padding: 10px;
+}
+
+/* Hover saat pilih kursi */
+option:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+#order-summary {
+    background: var(--dark-bg);
+    backdrop-filter: blur(8px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin: 20px auto; /* kasih jarak ke bawah */
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    display: none; /* defaultnya tetap hidden */
+}
+
+#order-summary h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#order-summary p {
+    margin: 0.3rem 0;
+    color: rgba(255,255,255,0.9);
+}
+
+/* ===== HALAMAN PEMBUKA ===== */
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+#intro-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(60%);
+}
+
+.intro-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.intro-overlay h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.intro-overlay button {
+  background-color: #ff0066;
+  border: none;
+  padding: 12px 30px;
+  color: white;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.intro-overlay button:hover {
+  background-color: #e6005a;
+}
+
+.intro-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+

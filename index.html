@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPSODI CONCERT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="[MV] Rapsodi - JKT48.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+<!-- HALAMAN PEMBUKA -->
+<div id="intro-screen" class="intro-screen">
+    <video autoplay muted loop id="intro-video"> <video autoplay muted loop id="intro-video"></video>
+        <source src="[MV] Rapsodi - JKT48.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+    </video>
+    <div class="intro-overlay">
+        <h1>Ayo kita seru-seruan bersama!</h1>
+        <button id="start-btn">Mulai</button>
+    </div>
+</div>
+
+
+    <div class="content">
+        <h1>RAPSODI CONCERT ON THE SPOT</h1>
+
+        <!-- FORM PEMESANAN -->
+       <form id="booking-form" autocomplete="off">
+
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Masukkan nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+            <label for="seat">Pilih Kursi:</label>
+            <select id="seat" name="seat" required>
+                <option value="">--Pilih Kursi--</option>
+                <option value="A1">A1 - Rp 500.000</option>
+                <option value="A2">A2 - Rp 500.000</option>
+                <option value="B1">B1 - Rp 400.000</option>
+                <option value="B2">B2 - Rp 400.000</option>
+
+                <option value="C1">C1 - Rp 300.000</option>
+                <option value="C2">C2 - Rp 300.000</option>
+            </select>
+                        <label for="payment">Metode Pembayaran:</label>
+                <select id="payment" name="payment" required>
+                    <option value="">--Pilih Metode Pembayaran--</option>
+                    <option value="va-bca">Virtual Account BCA</option>
+                    <option value="va-bni">Virtual Account BNI</option>
+                    <option value="va-bri">Virtual Account BRI</option>
+                    <option value="qris">QRIS</option>
+                </select>
+
+                <!-- tempat menampilkan detail pembayaran -->
+                <p id="summary-payment"></p>
+                <div id="summary-payment-detail"></div>
+
+
+
+            <label for="quantity">Jumlah Tiket:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5" required> 
+
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+
+        <!-- RINGKASAN PESANAN -->
+        <div id="order-summary" style="display:none; margin-top: 20px;">
+            <h2>Ringkasan Pesanan</h2>
+            <p id="summary-name"></p>
+            <p id="summary-email"></p>
+            <p id="summary-seat"></p>
+            <p id="summary-quantity"></p>
+            <p id="summary-total"></p> 
+              <div id="summary-map" style="margin-top:15px;"></div>
+              <button id="download-btn" style="margin-top:15px; display:none;">Download Ringkasan</button>
+
+           
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+</body>
+</html>
+ 
