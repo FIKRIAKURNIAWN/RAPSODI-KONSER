@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Ticket JKT48</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .ticket {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+    }
+
+    .ticket h2 {
+      margin-bottom: 10px;
+      color: #ff4d6d;
+    }
+
+    .ticket p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #00ff99;
+    }
+
+    #qrcode {
+      margin-top: 15px;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticket">
+    <h2>JKT48 RAPSODI</h2>
+    <p id="t-name"></p>
+    <p id="t-code"></p>
+    <p id="t-seat"></p>
+    <p id="t-qty"></p>
+    <p class="status">STATUS: PAID</p>
+
+    <div id="qrcode"></div>
+  </div>
+
+  <!-- QRCode Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+  <script src="tiket.js"></script>
+</body>
+</html>
