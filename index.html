@@ -8,9 +8,11 @@
 </head>
 <body>
     <div class="video-background">
-        <video autoplay muted loop id="bg-video">
-            <source src="[MV] Rapsodi - JKT48.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+       <video autoplay muted loop id="intro-video">
+  <source src="[MV] Rapsodi - JKT48.mp4" type="video/mp4">
+  Browser kamu tidak mendukung video.
+</video>
+
         </video>
     </div>
 <!-- HALAMAN PEMBUKA -->
@@ -73,6 +75,7 @@
         <!-- RINGKASAN PESANAN -->
         <div id="order-summary" style="display:none; margin-top: 20px;">
             <h2>Ringkasan Pesanan</h2>
+            <p id="summary-code"></p>
             <p id="summary-name"></p>
             <p id="summary-email"></p>
             <p id="summary-seat"></p>
@@ -80,6 +83,9 @@
             <p id="summary-total"></p> 
               <div id="summary-map" style="margin-top:15px;"></div>
               <button id="download-btn" style="margin-top:15px; display:none;">Download Ringkasan</button>
+             <button id="ticket-btn" style="margin-top:10px; display:none;">
+            Lihat Tiket
+            </button>
 
            
         </div>
